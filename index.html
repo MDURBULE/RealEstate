@@ -374,7 +374,8 @@
     </div>
     <div class="footer-cta-buttons">
       <a href="tel:+91778856076" class="footer-btn white">Get a Free Consultation</a>
-      <a href="#featured-layouts" class="footer-btn" >Download the Brochure</a>
+      <a href="#featured-layouts" class="footer-btn">Download the Brochure</a>
+
     </div>
   </div>
 
@@ -410,5 +411,24 @@
 
 
   <script src="assets/js/script.js" defer></script>
+<script>
+  document.querySelector('.footer-btn')?.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const target = document.getElementById('featured-layouts');
+    if (!target) return;
+
+    const offset = -64; // Scroll 15px above
+    const y = target.offsetTop + offset;
+
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+
+
 </body>
 </html>
